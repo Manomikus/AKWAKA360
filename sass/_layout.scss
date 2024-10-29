@@ -1,0 +1,206 @@
+// Style général pour le body avec un dégradé et l'image d'éléphant
+body {
+  background: linear-gradient(135deg, $color-primary, #ffffff, $color-secondary),
+    url("./images/tete.svg");
+  background-size: cover, 500px;
+  background-position: center, top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  margin: 0;
+  padding: 0;
+}
+
+// Header
+.main-header {
+  background-color: $color-light;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  @include box-shadow();
+  position: relative;
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    img {
+      max-height: 50px;
+      width: auto;
+      transition: max-height 0.3s;
+    }
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+  }
+  // Mode mobile
+
+  nav ul li a {
+    text-decoration: none;
+    color: $color-dark;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.5s;
+    margin-left: 2rem;
+
+    &:hover {
+      color: $color-primary;
+      transform: scale(1);
+    }
+  }
+
+  @include responsive(tablet) {
+    img {
+      max-height: 40px;
+    }
+    nav ul {
+      display: none; // Cache le menu par défaut en mobile
+      position: absolute; // Permet de positionner le menu par rapport au header
+      top: 100%; // Place le menu juste sous le header
+      left: 0;
+      width: 100%;
+      background-color: $color-light;
+      flex-direction: column;
+      padding: 1rem 0;
+      align-items: center; // Centre le menu
+      @include box-shadow();
+      &.active {
+        display: flex; // Affiche le menu quand il est activé
+      }
+      li a {
+        margin: 0;
+      }
+    }
+
+    .menu-toggle {
+      display: block; // Affiche le bouton toggle en mode mobile
+    }
+  }
+}
+// Main
+main {
+  padding: 2rem;
+
+  #accueil {
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      color: $color-dark;
+
+      @include responsive(tablet) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .section-actualites,
+  .section-evenements {
+    padding: 2rem;
+    opacity: 0.9;
+
+    h2 {
+      color: $color-primary;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .articles,
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+
+      article {
+        background: $color-white;
+        padding: 1rem;
+        border-radius: 10px;
+        @include box-shadow(rgba(0, 0, 0, 0.1));
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+        h3 {
+          margin-top: 0.5rem;
+          color: $color-dark;
+        }
+
+        .date {
+          font-size: 0.9rem;
+          color: #666;
+        }
+
+        .content {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-bottom: 0.5rem;
+        }
+
+        a {
+          text-decoration: none;
+          color: $color-secondary;
+          font-weight: bold;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    @include responsive(tablet) {
+      .articles,
+      .events {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+// Footer
+.main-footer {
+  background-color: $color-background;
+  color: $color-white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .footer-nav {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        color: $color-white;
+        font-size: 1rem;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo-wrapper">
+        <img src="./images/AKWABA360°.svg" alt="Logo" />
+        <p>AKWABA360°</p>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#evenements">Événements</a></li>
+          <li><a href="#contact">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="accueil">
+        <h1>Votre regard complet sur l'actualité ivoirienne</h1>
+      </section>
+
+      <!-- Section Actualités -->
+      <section id="actualites" class="section-actualites">
+        <h2>Actualités</h2>
+        <div class="articles">
+          <article>
+            <img src="./images/3091bac_afp-33qg9qe.avif" alt="Article 1" />
+            <h3>Article 1</h3>
+            <p class="date">
+              Publié il y a :
+              <span class="publication-date" data-date="2023-01-01"></span>
+            </p>
+            <p class="content">
+              Un contenu fictif pour l'article 1 qui est assez long pour
+              nécessiter une troncature et rendre le texte plus engageant pour
+              inviter à lire la suite...
+            </p>
+            <a href="#">Lire l'article complet</a>
+          </article>
+          <article>
+            <img
+              src="./images/Alassane Ouattara - infox - Côte d'Ivoire.png"
+              alt="Article 2"
+            />
+            <h3>Article 2</h3>
+            <p class="date">
+              Publié il y a :
+              <span class="publication-date" data-date="2023-02-05"></span>
+            </p>
+            <p class="content">
+              Un contenu fictif pour l'article 2. Ce texte est également long et
+              nécessite un lien pour lire la suite et découvrir tous les
+              détails...
+            </p>
+            <a href="#">Lire l'article complet</a>
+          </article>
+          <article>
+            <img src="./images/can finale.jpg" alt="Article 3" />
+            <h3>Article 3</h3>
+            <p class="date">
+              Publié il y a :
+              <span class="publication-date" data-date="2023-03-10"></span>
+            </p>
+            <p class="content">
+              Un contenu fictif pour l'article 3 avec quelques détails
+              supplémentaires...
+            </p>
+            <a href="#">Lire l'article complet</a>
+          </article>
+          <article>
+            <img src="./images/bedieeee.jpg" alt="Article 4" />
+            <h3>Article 4</h3>
+            <p class="date">
+              Publié il y a :
+              <span class="publication-date" data-date="2023-04-20"></span>
+            </p>
+            <p class="content">
+              Un contenu fictif pour l'article 4, rempli d'informations
+              captivantes...
+            </p>
+            <a href="#">Lire l'article complet</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section Événements -->
+      <section id="evenements" class="section-evenements">
+        <h2 class="mb-2">Événements</h2>
+        <div class="events">
+          <article>
+            <h3>Événement 1</h3>
+            <p class="date">
+              Publié il y a :
+              <span class="publication-date" data-date="2023-05-15"></span>
+            </p>
+            <p class="content">
+              Un contenu fictif pour l'événement 1 qui est assez long pour
+              inviter à lire la suite...
+            </p>
+            <a href="#">Voir l'événement complet</a>
+          </article>
+          <article>
+            <h3>Événement 2</h3>
+            <p class="date">
+              Publié il y a :
+              <span class="publication-date" data-date="2023-06-30"></span>
+            </p>
+            <p class="content">
+              Un contenu fictif pour l'événement 2 avec des détails
+              intéressants...
+            </p>
+            <a href="#">Voir l'événement complet</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Formulaire de contact -->
+      <section id="contact" class="section-contact">
+        <h2>Nous contacter</h2>
+        <form>
+          <div class="form-group">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" />
+          </div>
+          <div class="form-group">
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message"></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Votre message"
+            ></textarea>
+          </div>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p>&copy; 2023 Mon Site. Tous droits réservés.</p>
+        <nav class="footer-nav">
+          <a href="#accueil">Accueil</a>
+          <a href="#actualites">Actualités</a>
+          <a href="#evenements">Événements</a>
+          <a href="#contact">Nous contacter</a>
+        </nav>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">🌐</a>
+          <a href="#" aria-label="Twitter">🌐</a>
+          <a href="#" aria-label="Instagram">🌐</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script pour afficher la date relative -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dates = document.querySelectorAll(".publication-date");
+        dates.forEach((dateElement) => {
+          const publicationDate = new Date(
+            dateElement.getAttribute("data-date")
+          );
+          const now = new Date();
+          const timeDifference = Math.floor(
+            (now - publicationDate) / (1000 * 60 * 60 * 24)
+          );
+
+          dateElement.textContent = `${timeDifference} jours`;
+        });
+      });
+    </script>
+    <!-- Script pour le bouton toggle du menu -->
+    <script>
+      function toggleMenu() {
+        const nav = document.querySelector(".main-header nav ul");
+        nav.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

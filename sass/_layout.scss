@@ -1,7 +1,7 @@
 // Style général pour le body avec un dégradé et l'image d'éléphant
 body {
   background: linear-gradient(135deg, $color-primary, #ffffff, $color-secondary),
-    url("./images/tete.svg");
+    url("/images/tete.svg");
   background-size: cover, 500px;
   background-position: center, top;
   background-repeat: no-repeat;
@@ -9,6 +9,14 @@ body {
   background-blend-mode: overlay;
   margin: 0;
   padding: 0;
+}
+// container
+
+.container {
+  padding: 0rem 10rem 0 10rem;
+  @include responsive(tablet) {
+    padding: 0 1rem;
+  }
 }
 
 // Header
@@ -18,7 +26,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0rem 10rem 0 10rem;
+  @include responsive(tablet) {
+    padding: 0 1rem;
+  }
   @include box-shadow();
   position: relative;
   .logo-wrapper {
@@ -119,22 +130,33 @@ main {
     .events {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
 
       article {
         background: $color-white;
-        padding: 1rem;
+        padding: 0.7rem;
         border-radius: 10px;
-        @include box-shadow(rgba(0, 0, 0, 0.1));
+        @include subtle-box-shadow(10px, -3px); // Ombre noire par défaut
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px); // Légère animation au survol
+          @include gradient-box-shadow(
+            #f77f00,
+            #009e60,
+            15px,
+            -3px
+          ); // Ombre colorée au survol
+        }
 
         img {
           width: 100%;
           max-height: 30vh;
           object-fit: cover;
-          // object-position: center;
+          object-position: center;
           border-radius: 8px;
         }
 
@@ -183,7 +205,16 @@ main {
   padding: 1.5rem;
   text-align: center;
   margin-top: 2rem;
-
+  .footer-social {
+    i {
+      font-size: 1.8rem;
+      @include gradient-text(#f77f00, #ffffff, #009e60);
+      &:hover {
+        transform: scale(1.2); // Agrandissement fluide au survol
+        color: $color-white; // Couleur blanche temporaire pour l’icône entière au hover
+      }
+    }
+  }
   .footer-content {
     display: flex;
     flex-direction: column;
@@ -193,11 +224,10 @@ main {
     .footer-nav {
       display: flex;
       gap: 1.5rem;
-
       a {
         color: $color-white;
         font-size: 1rem;
-
+        text-wrap: nowrap;
         &:hover {
           color: $color-primary;
         }

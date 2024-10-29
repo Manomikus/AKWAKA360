@@ -132,7 +132,7 @@ main {
 
         img {
           width: 100%;
-          height: 200px;
+          max-height: 30vh;
           object-fit: cover;
           // object-position: center;
           border-radius: 8px;

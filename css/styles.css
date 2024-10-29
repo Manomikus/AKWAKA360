@@ -3,15 +3,11 @@ img {
   height: auto;
 }
 
-.mb-2 {
-  margin-bottom: 2rem;
-}
-
 .section-contact {
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
-  max-width: 600px;
+  max-width: 40rem;
   margin: 0 auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -63,7 +59,7 @@ img {
   content: "";
   position: absolute;
   top: -20px;
-  right: -15%;
+  right: -5%;
   width: 300px;
   height: 300px;
   background: url("/images/elephent-02.png") no-repeat;
@@ -230,7 +226,7 @@ main .section-actualites .events article img,
 main .section-evenements .articles article img,
 main .section-evenements .events article img {
   width: 100%;
-  height: 200px;
+  max-height: 30vh;
   object-fit: cover;
   border-radius: 8px;
 }

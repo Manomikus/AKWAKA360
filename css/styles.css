@@ -108,6 +108,11 @@ body {
 .container {
   padding: 0rem 10rem 0 10rem;
 }
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+}
 
 .main-header {
   background-color: rgba(255, 255, 255, 0.8);
@@ -118,6 +123,11 @@ body {
   padding: 0rem 10rem 0 10rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+}
+@media (max-width: 480px) {
+  .main-header {
+    padding: 0;
+  }
 }
 .main-header .logo-wrapper {
   display: flex;

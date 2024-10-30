@@ -141,11 +141,6 @@ body {
 .main-header .logo-wrapper p {
   font-weight: 700;
 }
-@media (max-width: 768px) and (orientation: landscape) {
-  .main-header .logo-wrapper p {
-    font-size: 0.1rem;
-  }
-}
 .main-header .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -336,6 +331,11 @@ main .section-evenements .events article a:hover {
   color: #ffffff;
   font-size: 1rem;
   text-wrap: nowrap;
+}
+@media (max-width: 480px) {
+  .main-footer .footer-content .footer-nav a {
+    font-size: 0.9rem;
+  }
 }
 .main-footer .footer-content .footer-nav a:hover {
   color: #f77f00;

@@ -42,9 +42,6 @@ body {
     }
     p {
       font-weight: 700;
-      @include direction(paysage) {
-        font-size: 0.1rem;
-      }
     }
   }
   .menu-toggle {
@@ -231,7 +228,11 @@ main {
       a {
         color: $color-white;
         font-size: 1rem;
+        @include responsive(mobile) {
+          font-size: 0.9rem;
+        }
         text-wrap: nowrap;
+
         &:hover {
           color: $color-primary;
         }

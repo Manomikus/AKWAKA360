@@ -13,9 +13,9 @@ body {
 // container
 
 .container {
-  padding: 0rem 10rem 0 10rem;
-  @include responsive (mobile){
-    padding: 0;
+  padding: 0 $container-padding;
+  @include responsive(mobile) {
+    padding: $container-padding-mobile;
   }
 }
 
@@ -26,9 +26,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 10rem 0 10rem;
-  @include responsive (mobile){
-    padding: 0;
+  padding: 0 $container-padding;
+  @include responsive(mobile) {
+    padding: $container-padding-mobile;
   }
 
   @include box-shadow();
@@ -106,15 +106,6 @@ main {
 
   #accueil {
     text-align: center;
-
-    h1 {
-      font-size: 2rem;
-      color: $color-dark;
-
-      @include responsive(tablet) {
-        font-size: 1.5rem;
-      }
-    }
   }
 
   .section-actualites,
@@ -122,14 +113,9 @@ main {
     padding: 2rem 0;
     opacity: 0.9;
 
-    h2 {
-      color: $color-primary;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
     .articles {
       grid-template-columns: repeat(4, minmax(300px, 0.3fr));
-      @include responsive (bigger){
+      @include responsive(bigger) {
         grid-template-columns: repeat(2, minmax(300px, 1fr));
       }
     }
@@ -155,8 +141,8 @@ main {
         &:hover {
           transform: translateY(-5px); // Légère animation au survol
           @include gradient-box-shadow(
-            #f77f00,
-            #009e60,
+            $color-primary,
+            $color-secondary,
             15px,
             -3px
           ); // Ombre colorée au survol
@@ -164,20 +150,10 @@ main {
 
         img {
           width: 100%;
-          max-height: 30vh;
+          max-height: 15vh;
           object-fit: cover;
           object-position: center;
           border-radius: 8px;
-        }
-
-        h3 {
-          margin-top: 0.5rem;
-          color: $color-dark;
-        }
-
-        .date {
-          font-size: 0.9rem;
-          color: #666;
         }
 
         .content {
@@ -187,14 +163,8 @@ main {
           margin-bottom: 0.5rem;
         }
 
-        a {
-          text-decoration: none;
-          color: $color-secondary;
-          font-weight: bold;
-
-          &:hover {
-            color: $color-primary;
-          }
+        a:hover {
+          color: $color-primary;
         }
       }
     }
@@ -211,18 +181,14 @@ main {
 // Footer
 .main-footer {
   background-color: $color-background;
-  color: $color-white;
+
   padding: 1.5rem;
-  text-align: center;
+
   margin-top: 2rem;
   .footer-social {
-    i {
-      font-size: 1.8rem;
-      @include gradient-text(#f77f00, #ffffff, #009e60);
-      &:hover {
-        transform: scale(1.2); // Agrandissement fluide au survol
-        color: $color-white; // Couleur blanche temporaire pour l’icône entière au hover
-      }
+    i:hover {
+      transform: scale(1.2); // Agrandissement fluide au survol
+      filter: drop-shadow(1px 3px 3px $color-primary);
     }
   }
   .footer-content {
@@ -234,17 +200,8 @@ main {
     .footer-nav {
       display: flex;
       gap: 1.5rem;
-      a {
-        color: $color-white;
-        font-size: 1rem;
-        @include responsive(mobile) {
-          font-size: 0.9rem;
-        }
-        text-wrap: nowrap;
-
-        &:hover {
-          color: $color-primary;
-        }
+      a:hover {
+        color: $color-primary;
       }
     }
   }

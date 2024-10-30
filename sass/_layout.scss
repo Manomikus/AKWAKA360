@@ -1,7 +1,7 @@
 // Style général pour le body avec un dégradé et l'image d'éléphant
 body {
   background: linear-gradient(135deg, $color-primary, #ffffff, $color-secondary),
-    url("./images/tete.svg");
+    url("../images/tete.svg");
   background-size: cover, 500px;
   background-position: center, top;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ body {
   justify-content: space-between;
   padding: 0rem 10rem 0 10rem;
   @include responsive(tablet) {
-    padding: 0 0 0 1rem;
+    padding: 0 1rem;
   }
   @include box-shadow();
   position: relative;
@@ -39,6 +39,12 @@ body {
       max-height: 50px;
       width: auto;
       transition: max-height 0.3s;
+    }
+    p {
+      font-weight: 700;
+      @include responsive(tablet) {
+        font-size: 0.8rem;
+      }
     }
   }
   .menu-toggle {
@@ -60,9 +66,10 @@ body {
     text-decoration: none;
     color: $color-dark;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     transition: all 0.5s;
     margin-left: 2rem;
+    text-wrap: nowrap;
 
     &:hover {
       color: $color-primary;
@@ -72,7 +79,7 @@ body {
 
   @include responsive(tablet) {
     img {
-      max-height: 40px;
+      max-height: 30px;
     }
     nav ul {
       display: none; // Cache le menu par défaut en mobile

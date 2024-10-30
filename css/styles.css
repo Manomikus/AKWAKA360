@@ -82,7 +82,7 @@ h3 {
 h1 {
   font-size: 2rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 1014px) {
   h1 {
     font-size: 1.5rem;
   }
@@ -108,11 +108,6 @@ body {
 .container {
   padding: 0rem 10rem 0 10rem;
 }
-@media (max-width: 768px) {
-  .container {
-    padding: 0;
-  }
-}
 
 .main-header {
   background-color: rgba(255, 255, 255, 0.8);
@@ -123,11 +118,6 @@ body {
   padding: 0rem 10rem 0 10rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-}
-@media (max-width: 768px) {
-  .main-header {
-    padding: 0 1rem;
-  }
 }
 .main-header .logo-wrapper {
   display: flex;
@@ -166,7 +156,7 @@ body {
   color: #f77f00;
   transform: scale(1);
 }
-@media (max-width: 768px) {
+@media (max-width: 1014px) {
   .main-header img {
     max-height: 20px;
   }
@@ -200,7 +190,7 @@ main #accueil h1 {
   font-size: 2rem;
   color: #333;
 }
-@media (max-width: 768px) {
+@media (max-width: 1014px) {
   main #accueil h1 {
     font-size: 1.5rem;
   }
@@ -217,11 +207,25 @@ main .section-evenements h2 {
   margin-bottom: 1.5rem;
 }
 main .section-actualites .articles,
+main .section-evenements .articles {
+  grid-template-columns: repeat(4, minmax(300px, 0.3fr));
+}
+@media (max-width: 1678px) {
+  main .section-actualites .articles,
+  main .section-evenements .articles {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+main .section-actualites .events,
+main .section-evenements .events {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+main .section-actualites .articles,
 main .section-actualites .events,
 main .section-evenements .articles,
 main .section-evenements .events {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-content: center;
   gap: 2rem;
 }
 main .section-actualites .articles article,
@@ -291,7 +295,7 @@ main .section-evenements .articles article a:hover,
 main .section-evenements .events article a:hover {
   color: #f77f00;
 }
-@media (max-width: 768px) {
+@media (max-width: 1014px) {
   main .section-actualites .articles,
   main .section-actualites .events,
   main .section-evenements .articles,

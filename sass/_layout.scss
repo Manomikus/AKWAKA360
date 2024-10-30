@@ -14,9 +14,6 @@ body {
 
 .container {
   padding: 0rem 10rem 0 10rem;
-  @include responsive(tablet) {
-    padding: 0;
-  }
 }
 
 // Header
@@ -27,9 +24,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0rem 10rem 0 10rem;
-  @include responsive(tablet) {
-    padding: 0 1rem;
-  }
+
   @include box-shadow();
   position: relative;
   .logo-wrapper {
@@ -126,11 +121,19 @@ main {
       text-align: center;
       margin-bottom: 1.5rem;
     }
-
+    .articles {
+      grid-template-columns: repeat(4, minmax(300px, 0.3fr));
+      @include responsive (bigger){
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+      }
+    }
+    .events {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
     .articles,
     .events {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      place-content: center;
       gap: 2rem;
 
       article {

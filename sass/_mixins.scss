@@ -3,24 +3,23 @@
 }
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == tablet {
-    @media (max-width: 768px) {
+  @if $breakpoint == bigger {
+    @media (max-width: 1678px) {
       @content;
     }
-  } @else if $breakpoint == mobile {
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 1014px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
     @media (max-width: 480px) {
       @content;
     }
   }
 }
 
-@mixin direction($orientation) {
-  @if $orientation == paysage {
-    @media (max-width: 768px) and (orientation: landscape) {
-      @content;
-    }
-  }
-}
 // Ombre noire subtile
 @mixin subtle-box-shadow($blur: 10px, $spread: -3px) {
   box-shadow: 0 4px $blur rgba(0, 0, 0, 0.1);

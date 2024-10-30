@@ -83,6 +83,10 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+.section-actualites h2 {
+  color: #009e60;
+}
+
 h3 {
   margin-top: 0.5rem;
 }

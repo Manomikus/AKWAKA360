@@ -141,9 +141,9 @@ body {
 .main-header .logo-wrapper p {
   font-weight: 700;
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: landscape) {
   .main-header .logo-wrapper p {
-    font-size: 0.8rem;
+    font-size: 0.1rem;
   }
 }
 .main-header .menu-toggle {
@@ -173,7 +173,7 @@ body {
 }
 @media (max-width: 768px) {
   .main-header img {
-    max-height: 30px;
+    max-height: 20px;
   }
   .main-header nav ul {
     display: none;
@@ -189,9 +189,6 @@ body {
   }
   .main-header nav ul.active {
     display: flex;
-  }
-  .main-header nav ul li a {
-    margin: 0;
   }
   .main-header .menu-toggle {
     display: block;

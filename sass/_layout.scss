@@ -42,8 +42,8 @@ body {
     }
     p {
       font-weight: 700;
-      @include responsive(tablet) {
-        font-size: 0.8rem;
+      @include direction(paysage) {
+        font-size: 0.1rem;
       }
     }
   }
@@ -79,7 +79,7 @@ body {
 
   @include responsive(tablet) {
     img {
-      max-height: 30px;
+      max-height: 20px;
     }
     nav ul {
       display: none; // Cache le menu par défaut en mobile
@@ -94,9 +94,6 @@ body {
       @include box-shadow();
       &.active {
         display: flex; // Affiche le menu quand il est activé
-      }
-      li a {
-        margin: 0;
       }
     }
 

@@ -13,6 +13,14 @@
     }
   }
 }
+
+@mixin direction($orientation) {
+  @if $orientation == paysage {
+    @media (max-width: 768px) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
 // Ombre noire subtile
 @mixin subtle-box-shadow($blur: 10px, $spread: -3px) {
   box-shadow: 0 4px $blur rgba(0, 0, 0, 0.1);
